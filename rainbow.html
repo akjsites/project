@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fan Rainbow Glow</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      flex-direction: column;
+      gap: 20px;
+      background-color: #000;
+    }
+
+    #rw {
+      width: 400px;
+      height: 400px;
+      animation: rainbow-glow 2s linear infinite;
+      filter: drop-shadow(0 0 20px red);
+    }
+
+    button {
+      width: 70px;
+      height: 30px;
+      border: none;
+      box-shadow: 3px 3px 10px rgb(0, 0, 0);
+      transition: all ease 0.7s;
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    button:hover{
+     background-color: rgb(71, 34, 255);
+     transform: ;
+     color: aliceblue;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes rainbow-glow {
+      0%   { filter: drop-shadow(0 0 15px red); }
+      20%  { filter: drop-shadow(0 0 15px orange); }
+      40%  { filter: drop-shadow(0 0 15px yellow); }
+      60%  { filter: drop-shadow(0 0 15px green); }
+      80%  { filter: drop-shadow(0 0 15px blue); }
+      100% { filter: drop-shadow(0 0 15px violet); }
+    }
+  </style>
+</head>
+<body>
+  <img src="fan-svg-png-icon-download-onlinewebfontsm-31.png" id="rw" alt="fan" />
+  <div>
+    <button id="roun">1</button>
+    <button id="roun1">2</button>
+    <button id="roun2">3</button>
+    <button id="roun3">4</button>
+    <button id="stop">Stop</button>
+  </div>
+
+  <script>
+    const fan = document.getElementById('rw');
+    document.getElementById('roun').addEventListener("click", function () {
+      document.getElementById('roun').style.transform=""
+      fan.style.animation = "spin 0.2s linear infinite, rainbow-glow 2s linear infinite";
+    });
+    document.getElementById('roun1').addEventListener("click", function () {
+      fan.style.animation = "spin 0.4s linear infinite, rainbow-glow 2s linear infinite";
+    });
+    document.getElementById('roun2').addEventListener("click", function () {
+      fan.style.animation = "spin 0.6s linear infinite, rainbow-glow 2s linear infinite";
+    });
+    document.getElementById('roun3').addEventListener("click", function () {
+      fan.style.animation = "spin 0.8s linear infinite, rainbow-glow 2s linear infinite";
+    });
+    document.getElementById('stop').addEventListener("click", function () {
+      fan.style.animation = "rainbow-glow 2s linear infinite";
+    });
+  </script>
+</body>
+</html>
