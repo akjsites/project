@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        h1{
+            font-size: 250px;
+            animation: glow 10s linear infinite;
+            text-align: center;
+            border: 1px solid ;
+            width: 800px;
+            
+        }
+        @keyframes glow{
+            0%{color: red;}
+            14%{color: yellow;}
+            28%{color: rgb(82, 82, 255);}
+            42%{color: rgb(255, 37, 255);}
+            56%{color: cyan;}
+            70%{color: rgb(180, 255, 67);}
+            84%{color: rgb(35, 193, 255);}
+            100%{color: aquamarine;}
+        }
+    </style>
+</head>
+<body>
+   <div class="mai">
+    <div style="display: flex; justify-content: center;"> <h1 id="clk"></h1></div>
+   </div>
+    <script>
+        function clock()
+        {
+            const a=new Date()
+            let h=a.getHours();
+            let m=a.getMinutes();
+            let s=a.getSeconds();
+            document.getElementById("clk").innerHTML=h + ":" + m +":"+ s;
+     
+            setTimeout(clock,1000);
+        }
+        clock();
+    </script>
+</body>
+</html>
